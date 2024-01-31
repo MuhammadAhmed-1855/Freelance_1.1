@@ -8,6 +8,8 @@ import Button from '@mui/material/Button';
 import Paper from '@mui/material/Paper';
 import { toast } from 'react-hot-toast';
 import emailjs from 'emailjs-com';
+import Image from 'next/image';
+import ContactUs from '../images/contactus.jpg';
 
 const Contact = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
@@ -53,8 +55,8 @@ const Contact = () => {
       <Grid container spacing={2} justifyContent="center" alignItems="center">
         <Grid item xs={12} md={6}>
           {/* Image component at the top */}
-          <img
-            src="https://via.placeholder.com/600"
+          <Image
+            src={ContactUs}
             alt="Contact"
             style={{ width: '100%', height: 'auto', borderRadius: '8px' }}
           />

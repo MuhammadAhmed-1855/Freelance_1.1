@@ -2,28 +2,33 @@
 
 import React from 'react';
 import { Container, Typography, Grid, Paper, CardMedia } from '@mui/material';
+import Image from 'next/image';
+import SignIn from '../images/signin.jpg';
+import WalletGen from '../images/walletgen.jpg';
+import BuyImg from '../images/buy.jpg';
+import SellImg from '../images/sell.jpg';
 
 const Works = () => {
   const steps = [
     {
-      title: 'Step 1',
-      description: 'Sign up for our service by providing your email and creating a password.',
-      image: 'https://via.placeholder.com/200', // Replace with your image URL
+      title: 'Sign In',
+      description: 'Securely access our platform by providing your email and creating a password.',
+      image: SignIn, // Replace with your image URL
     },
     {
-      title: 'Step 2',
-      description: 'Explore the features and functionalities of our platform to understand how it can benefit you.',
-      image: 'https://via.placeholder.com/200', // Replace with your image URL
+      title: 'Wallet Generation',
+      description: 'A unique wallet generated for each user, ensuring the security of their digital assets.',
+      image: WalletGen, // Replace with your image URL
     },
     {
-      title: 'Step 3',
-      description: 'Customize your profile settings to personalize your experience according to your preferences.',
-      image: 'https://via.placeholder.com/200', // Replace with your image URL
+      title: 'Buy',
+      description: 'A seamless and secure transaction experience buying USDT or Ruble from local sellers.',
+      image: BuyImg, // Replace with your image URL
     },
     {
-      title: 'Step 4',
-      description: 'Connect with other users, share your experiences, and collaborate on projects.',
-      image: 'https://via.placeholder.com/200', // Replace with your image URL
+      title: 'Sell',
+      description: 'List your USDT or Ruble for sale on our platform for hassle-free transactions in local community.',
+      image: SellImg, // Replace with your image URL
     },
   ];
 
@@ -36,13 +41,12 @@ const Works = () => {
         {steps.map((step, index) => (
           <Grid item key={index} xs={12} md={6}>
             <Paper sx={{ p: 1, m: 5, display: 'flex', alignItems: 'center', height: '80%', width: '80%', marginBottom: index === 1 ? 4 : 0 }}>
-              <CardMedia
-                component="img"
+              <Image
+                src={step.image}
                 alt={`Step ${index + 1}`}
-                height="auto" // Increase image height
-                width="auto"
-                image={step.image}
-                sx={{ marginRight: 3, borderRadius: '8px' }}
+                width={250} // Adjust width and height based on your preference
+                height={250}
+                style={{ borderRadius: '8px', marginBottom: '1rem' }}
               />
               <div>
                 <Typography variant="h5" color="primary" gutterBottom>
